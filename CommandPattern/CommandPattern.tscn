@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/maze-generator-plugin/MazeGenerator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CommandPattern/CommandPattern.gd" type="Script" id=2]
-[ext_resource path="res://CommandPattern/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CommandPattern/NavigationBTN.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CommandPattern/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CommandPattern/Button.tscn" type="PackedScene" id=5]
 
 [node name="CommandPattern" type="Node"]
 script = ExtResource( 2 )
@@ -13,21 +15,27 @@ tile_data = PoolIntArray( 0, 11, 0, 1, 13, 0, 2, 1, 0, 3, 5, 0, 4, 5, 0, 5, 3, 0
 width = 16
 height = 7
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Main" type="CanvasLayer" parent="."]
+
+[node name="Player" parent="Main" instance=ExtResource( 4 )]
+position = Vector2( 40, 40 )
+maze_gen_path = NodePath("../../MazeGenerator")
+
+[node name="UI" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="UI"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -160.0
 
-[node name="BG" type="ColorRect" parent="CanvasLayer/UI"]
+[node name="BG" type="ColorRect" parent="UI/UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
-[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/UI"]
+[node name="Buttons" type="HBoxContainer" parent="UI/UI"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,35 +47,35 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Edit" type="VBoxContainer" parent="CanvasLayer/UI/Buttons"]
+[node name="Edit" type="VBoxContainer" parent="UI/UI/Buttons"]
 margin_left = 200.0
 margin_right = 587.0
 margin_bottom = 130.0
 alignment = 2
 
-[node name="R1" type="HBoxContainer" parent="CanvasLayer/UI/Buttons/Edit"]
+[node name="R1" type="HBoxContainer" parent="UI/UI/Buttons/Edit"]
 margin_top = 67.0
 margin_right = 387.0
 margin_bottom = 130.0
 
-[node name="New" parent="CanvasLayer/UI/Buttons/Edit/R1" instance=ExtResource( 3 )]
+[node name="New" parent="UI/UI/Buttons/Edit/R1" instance=ExtResource( 5 )]
 margin_right = 115.0
 margin_bottom = 63.0
 text = "New"
 
-[node name="Undo" parent="CanvasLayer/UI/Buttons/Edit/R1" instance=ExtResource( 3 )]
+[node name="Undo" parent="UI/UI/Buttons/Edit/R1" instance=ExtResource( 5 )]
 margin_left = 119.0
 margin_right = 253.0
 margin_bottom = 63.0
 text = "Undo"
 
-[node name="Redo" parent="CanvasLayer/UI/Buttons/Edit/R1" instance=ExtResource( 3 )]
+[node name="Redo" parent="UI/UI/Buttons/Edit/R1" instance=ExtResource( 5 )]
 margin_left = 257.0
 margin_right = 387.0
 margin_bottom = 63.0
 text = "Redo"
 
-[node name="Navigation" type="VBoxContainer" parent="CanvasLayer/UI/Buttons"]
+[node name="Navigation" type="VBoxContainer" parent="UI/UI/Buttons"]
 margin_left = 687.0
 margin_right = 1080.0
 margin_bottom = 130.0
@@ -76,36 +84,39 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="R1" type="HBoxContainer" parent="CanvasLayer/UI/Buttons/Navigation"]
+[node name="R1" type="HBoxContainer" parent="UI/UI/Buttons/Navigation"]
 margin_right = 393.0
 margin_bottom = 63.0
 alignment = 1
 
-[node name="Up" parent="CanvasLayer/UI/Buttons/Navigation/R1" instance=ExtResource( 3 )]
-margin_left = 159.0
-margin_right = 234.0
-margin_bottom = 63.0
+[node name="Up" parent="UI/UI/Buttons/Navigation/R1" instance=ExtResource( 3 )]
 text = "Up"
+dir = Vector2( 0, -1 )
+player_path = NodePath("../../../../../../Main/Player")
 
-[node name="R2" type="HBoxContainer" parent="CanvasLayer/UI/Buttons/Navigation"]
+[node name="R2" type="HBoxContainer" parent="UI/UI/Buttons/Navigation"]
 margin_top = 67.0
 margin_right = 393.0
 margin_bottom = 130.0
 alignment = 1
 
-[node name="Left" parent="CanvasLayer/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
+[node name="Left" parent="UI/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
+margin_left = 0.0
 margin_right = 105.0
-margin_bottom = 63.0
 text = "Left"
+dir = Vector2( -1, 0 )
+player_path = NodePath("../../../../../../Main/Player")
 
-[node name="Down" parent="CanvasLayer/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
+[node name="Down" parent="UI/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
 margin_left = 109.0
 margin_right = 255.0
-margin_bottom = 63.0
 text = "Down"
+dir = Vector2( 0, 1 )
+player_path = NodePath("../../../../../../Main/Player")
 
-[node name="Right" parent="CanvasLayer/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
+[node name="Right" parent="UI/UI/Buttons/Navigation/R2" instance=ExtResource( 3 )]
 margin_left = 259.0
 margin_right = 393.0
-margin_bottom = 63.0
 text = "Right"
+dir = Vector2( 1, 0 )
+player_path = NodePath("../../../../../../Main/Player")

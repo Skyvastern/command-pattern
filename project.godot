@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "MazeGenerator",
 "language": "GDScript",
 "path": "res://addons/maze-generator-plugin/MazeGenerator.gd"
+}, {
+"base": "Node2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://CommandPattern/Player.gd"
 } ]
 _global_script_class_icons={
-"MazeGenerator": ""
+"MazeGenerator": "",
+"Player": ""
 }
 
 [application]
