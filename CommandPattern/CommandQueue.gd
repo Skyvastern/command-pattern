@@ -30,8 +30,21 @@ func redo_command() -> BaseCommand:
 
 	return command
 
+
+func _empty_undo() -> void:
+	for c in _undo_queue:
+		c.queue_free()
+	
+	_undo_queue.clear()
+
+
 func _empty_redo() -> void:
 	for c in _redo_queue:
 		c.queue_free()
 	
 	_redo_queue.clear()
+
+
+func reset_queues() -> void:
+	_empty_undo()
+	_empty_redo()
