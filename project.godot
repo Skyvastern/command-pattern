@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BaseCommand",
+"language": "GDScript",
+"path": "res://CommandPattern/BaseCommand.gd"
+}, {
+"base": "Node",
+"class": "CommandQueue",
+"language": "GDScript",
+"path": "res://CommandPattern/CommandQueue.gd"
+}, {
 "base": "TileMap",
 "class": "MazeGenerator",
 "language": "GDScript",
@@ -18,10 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://CommandPattern/Player.gd"
+}, {
+"base": "BaseCommand",
+"class": "PlayerCommand",
+"language": "GDScript",
+"path": "res://CommandPattern/PlayerCommand.gd"
 } ]
 _global_script_class_icons={
+"BaseCommand": "",
+"CommandQueue": "",
 "MazeGenerator": "",
-"Player": ""
+"Player": "",
+"PlayerCommand": ""
 }
 
 [application]

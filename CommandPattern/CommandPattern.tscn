@@ -120,3 +120,8 @@ margin_right = 393.0
 text = "Right"
 dir = Vector2( 1, 0 )
 player_path = NodePath("../../../../../../Main/Player")
+
+[connection signal="pressed" from="UI/UI/Buttons/Edit/R1/Undo" to="Main/Player/CommandQueue" method="undo_command"]
+[connection signal="pressed" from="UI/UI/Buttons/Edit/R1/Redo" to="Main/Player/CommandQueue" method="redo_command"]
+
+[editable path="Main/Player"]
