@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/maze-generator-plugin/MazeGenerator.tscn" type="PackedScene" id=1]
-[ext_resource path="res://CommandPattern/CommandPattern.gd" type="Script" id=2]
-[ext_resource path="res://CommandPattern/NavigationBTN.tscn" type="PackedScene" id=3]
-[ext_resource path="res://CommandPattern/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://CommandPattern/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Main/CommandPattern/CommandPattern.gd" type="Script" id=2]
+[ext_resource path="res://Main/UI/NavigationBTN.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Main/UI/Button.tscn" type="PackedScene" id=5]
 
 [node name="CommandPattern" type="Node"]
 script = ExtResource( 2 )
