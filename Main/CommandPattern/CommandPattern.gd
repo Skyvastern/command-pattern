@@ -13,3 +13,9 @@ func _ready() -> void:
 func new_game() -> void:
 	maze_gen.generate()
 	player.reset()
+
+func undo_command() -> void:
+	var _command: BaseCommand = CommandQueue.undo_command()
+
+func redo_command() -> void:
+	var _command: BaseCommand = CommandQueue.redo_command()

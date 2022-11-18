@@ -6,8 +6,6 @@ onready var maze_gen: MazeGenerator = get_node(maze_gen_path)
 onready var distance: float = maze_gen.cell_size.x
 
 export var command_scene: PackedScene
-export var queue_path: NodePath
-onready var queue: CommandQueue = get_node(queue_path)
 
 
 func _process(_delta: float) -> void:
@@ -31,9 +29,9 @@ func move(dir: Vector2) -> void:
 	command.direction = dir
 	command.magnitude = distance
 
-	queue.execute(command)
+	CommandQueue.execute(command)
 
 
 func reset() -> void:
 	position = Vector2(40, 40) # Will make this automatic later
-	queue.reset_queues()
+	CommandQueue.reset_queues()

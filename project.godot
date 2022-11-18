@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Main/CommandPattern/Commands/BaseCommand.gd"
 }, {
-"base": "Node",
-"class": "CommandQueue",
-"language": "GDScript",
-"path": "res://Main/CommandPattern/Queue/CommandQueue.gd"
-}, {
 "base": "TileMap",
 "class": "MazeGenerator",
 "language": "GDScript",
@@ -36,7 +31,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseCommand": "",
-"CommandQueue": "",
 "MazeGenerator": "",
 "Player": "",
 "PlayerCommand": ""
@@ -47,6 +41,10 @@ _global_script_class_icons={
 config/name="Command Pattern"
 run/main_scene="res://Main/CommandPattern/CommandPattern.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+CommandQueue="*res://Main/CommandPattern/Queue/CommandQueue.tscn"
 
 [display]
 

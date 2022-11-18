@@ -1,5 +1,4 @@
 extends Node
-class_name CommandQueue
 
 var _undo_queue: Array = []
 var _redo_queue: Array = []
