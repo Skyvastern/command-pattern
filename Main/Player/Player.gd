@@ -11,25 +11,31 @@ export var command_scene: PackedScene
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		move(Vector2(0, -1))
-	if Input.is_action_just_pressed("ui_down"):
+	elif Input.is_action_just_pressed("ui_down"):
 		move(Vector2(0, 1))
-	if Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("ui_right"):
 		move(Vector2(1, 0))
-	if Input.is_action_just_pressed("ui_left"):
+	elif Input.is_action_just_pressed("ui_left"):
 		move(Vector2(-1, 0))
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		var command = command_scene.instance()
-		add_child(command)
 
 
 func move(dir: Vector2) -> void:
+	if _is_collider_ahead(dir):
+		return
+
 	var command = command_scene.instance()
 	command.player = self
 	command.direction = dir
 	command.magnitude = distance
 
 	CommandQueue.execute(command)
+
+
+func _is_collider_ahead(dir: Vector2) -> bool:
+	var space_state := get_world_2d().direct_space_state
+	var result := space_state.intersect_ray(global_position, global_position + (dir * 32))
+	return result.size() > 0
 
 
 func reset() -> void:
