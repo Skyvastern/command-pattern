@@ -56,7 +56,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-CommandQueue="*res://Main/CommandPattern/Queue/CommandQueue.tscn"
+CommandList="*res://Main/CommandPattern/Queue/CommandList.tscn"
 
 [display]
 

@@ -17,7 +17,7 @@ func move(dir: Vector2) -> void:
 	command.direction = dir
 	command.magnitude = distance
 
-	CommandQueue.execute(command)
+	CommandList.execute(command)
 
 
 func _is_collider_ahead(dir: Vector2) -> bool:
@@ -28,4 +28,4 @@ func _is_collider_ahead(dir: Vector2) -> bool:
 
 func reset() -> void:
 	position = Vector2(40, 40) # Will make this automatic later
-	CommandQueue.reset_queues()
+	CommandList.reset_queues()
