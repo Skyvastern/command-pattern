@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/maze-generator-plugin/MazeGenerator.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main/CommandPattern/CommandPattern.gd" type="Script" id=2]
+[ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://Main/UI/NavigationButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Main/UI/EditButton.tscn" type="PackedScene" id=5]
@@ -134,7 +134,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="CommandPattern" type="Node"]
+[node name="Main" type="Node"]
 script = ExtResource( 2 )
 maze_gen_path = NodePath("MazeGenerator")
 player_path = NodePath("Main/Player")
