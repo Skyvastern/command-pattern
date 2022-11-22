@@ -27,5 +27,5 @@ func _is_collider_ahead(dir: Vector2) -> bool:
 
 
 func reset() -> void:
-	position = Vector2(40, 40) # Will make this automatic later
+	position = Vector2(40, 40)
 	CommandList.reset_queues()

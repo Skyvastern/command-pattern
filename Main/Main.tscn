@@ -331,7 +331,6 @@ texture = ExtResource( 6 )
 [connection signal="press" from="UI/UI/Buttons/Edit/R1/Undo" to="." method="undo_command"]
 [connection signal="press" from="UI/UI/Buttons/Edit/R1/Redo" to="." method="redo_command"]
 
-[editable path="Main/Player"]
 [editable path="UI/UI/Buttons/Edit/R1/New"]
 [editable path="UI/UI/Buttons/Edit/R1/Undo"]
 [editable path="UI/UI/Buttons/Edit/R1/Redo"]
