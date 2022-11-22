@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "BaseCommand",
-"language": "GDScript",
-"path": "res://Main/CommandPattern/Commands/BaseCommand.gd"
-}, {
 "base": "Control",
 "class": "CustomButton",
 "language": "GDScript",
@@ -33,19 +28,12 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Main/Player/Player.gd"
-}, {
-"base": "BaseCommand",
-"class": "PlayerCommand",
-"language": "GDScript",
-"path": "res://Main/CommandPattern/Commands/PlayerCommand.gd"
 } ]
 _global_script_class_icons={
-"BaseCommand": "",
 "CustomButton": "",
 "MazeGenerator": "",
 "NavigationButton": "",
-"Player": "",
-"PlayerCommand": ""
+"Player": ""
 }
 
 [application]
@@ -53,10 +41,6 @@ _global_script_class_icons={
 config/name="Command Pattern"
 run/main_scene="res://Main/Main.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-CommandList="*res://Main/CommandPattern/Buffer/CommandList.tscn"
 
 [display]
 

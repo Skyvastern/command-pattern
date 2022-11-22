@@ -15,7 +15,7 @@ func new_game() -> void:
 	player.reset()
 
 func undo_command() -> void:
-	var _command: BaseCommand = CommandList.undo_command()
+	pass
 
 func redo_command() -> void:
-	var _command: BaseCommand = CommandList.redo_command()
+	pass

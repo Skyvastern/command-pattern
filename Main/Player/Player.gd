@@ -3,21 +3,14 @@ class_name Player
 
 export var maze_gen_path: NodePath
 onready var maze_gen: MazeGenerator = get_node(maze_gen_path)
-onready var distance: float = maze_gen.cell_size.x
-
-export var command_scene: PackedScene	
+onready var distance: float = maze_gen.cell_size.x	
 
 
 func move(dir: Vector2) -> void:
 	if _is_collider_ahead(dir):
 		return
-
-	var command = command_scene.instance()
-	command.player = self
-	command.direction = dir
-	command.magnitude = distance
-
-	CommandList.execute(command)
+	
+	position += dir * distance
 
 
 func _is_collider_ahead(dir: Vector2) -> bool:
@@ -27,5 +20,4 @@ func _is_collider_ahead(dir: Vector2) -> bool:
 
 
 func reset() -> void:
-	position = Vector2(40, 40) # Will make this automatic later
-	CommandList.reset_queues()
+	position = Vector2(40, 40)
