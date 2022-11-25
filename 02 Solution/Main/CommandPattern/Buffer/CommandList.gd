@@ -44,6 +44,6 @@ func _empty_redo() -> void:
 	_redo_array.clear()
 
 
-func reset_queues() -> void:
+func reset_arrays() -> void:
 	_empty_undo()
 	_empty_redo()
