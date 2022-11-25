@@ -17,7 +17,7 @@ func move(dir: Vector2) -> void:
 	command.direction = dir
 	command.magnitude = distance
 
-	CommandList.execute(command)
+	CommandList.run(command)
 
 
 func _is_collider_ahead(dir: Vector2) -> bool:

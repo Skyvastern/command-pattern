@@ -4,7 +4,7 @@ var _undo_queue: Array = []
 var _redo_queue: Array = []
 
 
-func execute(command: BaseCommand) -> void:
+func run(command: BaseCommand) -> void:
 	add_child(command)
 	command.execute()
 	_undo_queue.append(command)
