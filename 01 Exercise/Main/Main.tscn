@@ -327,9 +327,9 @@ player_path = NodePath("../../../../../../Main/Player")
 [node name="BG" parent="UI/UI/Buttons/Navigation/R2/Right" index="0"]
 texture = ExtResource( 6 )
 
-[connection signal="press" from="UI/UI/Buttons/Edit/R1/New" to="." method="new_game"]
-[connection signal="press" from="UI/UI/Buttons/Edit/R1/Undo" to="." method="undo_command"]
-[connection signal="press" from="UI/UI/Buttons/Edit/R1/Redo" to="." method="redo_command"]
+[connection signal="button_down" from="UI/UI/Buttons/Edit/R1/New" to="." method="new_game"]
+[connection signal="button_down" from="UI/UI/Buttons/Edit/R1/Undo" to="." method="undo_command"]
+[connection signal="button_down" from="UI/UI/Buttons/Edit/R1/Redo" to="." method="redo_command"]
 
 [editable path="UI/UI/Buttons/Edit/R1/New"]
 [editable path="UI/UI/Buttons/Edit/R1/Undo"]
