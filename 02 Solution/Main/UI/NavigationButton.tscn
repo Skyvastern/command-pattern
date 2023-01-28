@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="NavigationButton" type="Control"]
+[node name="NavigationButton" type="TextureButton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

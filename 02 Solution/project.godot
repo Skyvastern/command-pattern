@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Main/CommandPattern/Commands/BaseCommand.gd"
 }, {
-"base": "Control",
+"base": "TextureButton",
 "class": "CustomButton",
 "language": "GDScript",
 "path": "res://Main/Common/CustomButton/CustomButton.gd"

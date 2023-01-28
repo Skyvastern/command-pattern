@@ -13,10 +13,21 @@ onready var left: NavigationButton = get_node(left_path)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
-		up.emit_signal("press")
+		up.emit_signal("button_down")
+	elif Input.is_action_just_released("ui_up"):
+		up.emit_signal("button_up")
+		
 	elif Input.is_action_just_pressed("ui_down"):
-		down.emit_signal("press")
+		down.emit_signal("button_down")
+	elif Input.is_action_just_released("ui_down"):
+		down.emit_signal("button_up")
+		
 	elif Input.is_action_just_pressed("ui_right"):
-		right.emit_signal("press")
+		right.emit_signal("button_down")
+	elif Input.is_action_just_released("ui_right"):
+		right.emit_signal("button_up")
+		
 	elif Input.is_action_just_pressed("ui_left"):
-		left.emit_signal("press")
+		left.emit_signal("button_down")
+	elif Input.is_action_just_released("ui_left"):
+		left.emit_signal("button_up")
